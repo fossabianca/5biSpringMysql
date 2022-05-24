@@ -30,13 +30,13 @@ public class GestioneController {
     }
     
     @GetMapping("/Auto/{id}")
-    public Optional<auto> getAutoById(@PathVariable(value = "id") Long autoId) 
+    public Optional<auto> getAutoById(@PathVariable(value = "id") int autoId) 
     {
     return autoRepository.findById(autoId);
     }
 
     @GetMapping("/Proprietario/{id}")
-    public Optional<proprietario> getProprietarioById(@PathVariable(value = "id") Long proprietarioId) 
+    public Optional<proprietario> getProprietarioById(@PathVariable(value = "id") int proprietarioId) 
     {
     return proprietarioRepository.findById(proprietarioId);
     }

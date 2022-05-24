@@ -2,7 +2,9 @@ package com.gestione.gestione.model;
 
 import javax.persistence.*;
 
+import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 
 @Entity
 @Table(name = "proprietario")
@@ -12,58 +14,18 @@ public class proprietario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private int id;
+    @Getter @Setter private int id;
 
     @NonNull
     @Column(name = "nome", nullable = false)
-    private String nome;
+    @Getter @Setter private String nome;
 
     @NonNull
     @Column(name = "cognome", nullable = false)
-    private String cognome;
+    @Getter @Setter private String cognome;
 
     @NonNull
     @Column(name = "telefono", nullable = false)
-    private String telefono;
-    
-    public int getId()
-    {
-        return id;        
-    }
-
-    public String getNome()
-    {
-        return nome;        
-    }
-
-    public String getCognome()
-    {
-        return cognome;        
-    }
-
-    public String getTelefono()
-    {
-        return telefono;        
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;        
-    }
-
-    public void setNome(String nome)
-    {
-        this.nome = nome;        
-    }
-
-    public void setCognome(String cognome)
-    {
-        this.cognome = cognome;        
-    }
-
-    public void setTelefono(String telefono)
-    {
-        this.telefono = telefono;        
-    }
+    @Getter @Setter private String telefono;
 
 }

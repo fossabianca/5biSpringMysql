@@ -11,18 +11,19 @@ public class proprietario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private long id;
 
     @NonNull
-    @Column(name = "nome", nullable = false, length = 30)
+    @Column(name = "nome", nullable = false)
     private String nome;
 
     @NonNull
-    @Column(name = "cognome", nullable = false, length = 30)
+    @Column(name = "cognome", nullable = false)
     private String cognome;
 
     @NonNull
-    @Column(name = "telefono", nullable = false, length = 30)
+    @Column(name = "telefono", nullable = false)
     private String telefono;
     
 

@@ -11,18 +11,19 @@ public class auto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private long id;
 
     @NonNull
-    @Column(name = "targa", nullable = false, length = 7)
+    @Column(name = "targa", nullable = false)
     private String targa;
 
     @NonNull
-    @Column(name = "marca", nullable = false, length = 30)
+    @Column(name = "marca", nullable = false)
     private String marca;
 
     @NonNull
-    @Column(name = "modello", nullable = false, length = 30)
+    @Column(name = "modello", nullable = false)
     private String modello;
 
     @NonNull

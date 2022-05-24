@@ -23,7 +23,7 @@ public class GestioneController {
     return autoRepository.findAll();
     }
 
-    @GetMapping("/c")
+    @GetMapping("/Proprietario")
     public List<proprietario> getAllProprietari() 
     {
     return proprietarioRepository.findAll();
@@ -35,7 +35,7 @@ public class GestioneController {
     return autoRepository.findById(autoId);
     }
 
-    @GetMapping("/proprietario/{id}")
+    @GetMapping("/Proprietario/{id}")
     public Optional<proprietario> getProprietarioById(@PathVariable(value = "id") Long proprietarioId) 
     {
     return proprietarioRepository.findById(proprietarioId);

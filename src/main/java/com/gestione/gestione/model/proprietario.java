@@ -12,7 +12,7 @@ public class proprietario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private long id;
+    private int id;
 
     @NonNull
     @Column(name = "nome", nullable = false)
@@ -26,7 +26,7 @@ public class proprietario {
     @Column(name = "telefono", nullable = false)
     private String telefono;
     
-    public long getId()
+    public int getId()
     {
         return id;        
     }

@@ -12,7 +12,7 @@ public class auto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private long id;
+    private int id;
 
     @NonNull
     @Column(name = "targa", nullable = false)
@@ -58,7 +58,7 @@ public class auto {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
       

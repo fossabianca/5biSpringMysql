@@ -29,18 +29,34 @@ public class GestioneController {
     return proprietarioRepository.findAll();
     }
     
-    @GetMapping("/Auto/{id}")
+    @GetMapping("/Auto/id/{id}")
     public Optional<auto> getAutoById(@PathVariable(value = "id") int autoId) 
     {
     return autoRepository.findById(autoId);
     }
 
-    @GetMapping("/Proprietario/{id}")
+    @GetMapping("/Proprietario/id/{id}")
     public Optional<proprietario> getProprietarioById(@PathVariable(value = "id") int proprietarioId) 
     {
     return proprietarioRepository.findById(proprietarioId);
     }
    
+    @GetMapping("/Proprietario/cognome/{cognome}")
+    public proprietario getProprietarioByCognome(@PathVariable(value = "cognome") String cognome) 
+    {
+    return proprietarioRepository.findByCognome(cognome);
+    }
 
+    @GetMapping("/Proprietari/cognome/{cognome}")
+    public List<proprietario> getProprietariByCognome(@PathVariable(value = "cognome") String cognome) 
+    {
+    return proprietarioRepository.getProprietariByCognome(cognome);
+    }
+
+    @GetMapping("/Proprietario/nome/{nome}")
+    public proprietario getProprietarioByNome(@PathVariable(value = "nome") String nome) 
+    {
+    return proprietarioRepository.findByNome(nome);
+    }
     
 }

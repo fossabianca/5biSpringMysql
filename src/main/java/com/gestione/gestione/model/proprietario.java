@@ -14,18 +14,50 @@ public class proprietario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    @Getter @Setter private int id;
+    private int id;
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @NonNull
     @Column(name = "nome", nullable = false)
-    @Getter @Setter private String nome;
+    private String nome;
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     @NonNull
     @Column(name = "cognome", nullable = false)
-    @Getter @Setter private String cognome;
+     private String cognome;
+
+    public String getCognome() {
+        return this.cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
 
     @NonNull
     @Column(name = "telefono", nullable = false)
-    @Getter @Setter private String telefono;
+    private String telefono;
+
+    public String getTelefono() {
+        return this.telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
 }

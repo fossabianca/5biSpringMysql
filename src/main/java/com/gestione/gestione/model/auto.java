@@ -14,23 +14,63 @@ public class auto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    @Getter @Setter private int id;
+    private int id;
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @NonNull
     @Column(name = "targa", nullable = false)
-    @Getter @Setter private String targa;
+    private String targa;
+
+    public String getTarga() {
+        return this.targa;
+    }
+
+    public void setTarga(String targa) {
+        this.targa = targa;
+    }
 
     @NonNull
     @Column(name = "marca", nullable = false)
-    @Getter @Setter private String marca;
+    private String marca;
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
     @NonNull
     @Column(name = "modello", nullable = false)
-    @Getter @Setter private String modello;
+    private String modello;
+
+    public String getModello() {
+        return this.modello;
+    }
+
+    public void setModello(String modello) {
+        this.modello = modello;
+    }
 
     @NonNull
     @Column(name = "fkproprietario",nullable = false)
-    @Getter @Setter private int fkproprietario;
+    private int fkproprietario;
+
+    public int getFkproprietario() {
+        return this.fkproprietario;
+    }
+
+    public void setFkproprietario(int fkproprietario) {
+        this.fkproprietario = fkproprietario;
+    }
 
 
 }

@@ -74,4 +74,25 @@ public class GestioneController {
     {
         return proprietarioRepository.saveAll(proprietari);
     }
+
+    @Transactional
+    @PutMapping("/update/Proprietario")
+    public proprietario updateproprietario(@RequestBody proprietario proprietario)
+    {
+        proprietario proprietarioMemorizzato = proprietarioRepository.findById(proprietario.getId()).orElse(proprietario);
+        proprietarioMemorizzato.setCognome(proprietario.getCognome());
+        proprietarioMemorizzato.setNome(proprietario.getNome());
+        proprietarioMemorizzato.setTelefono(proprietario.getTelefono());
+        return proprietarioRepository.save(proprietarioMemorizzato);
+    }
+
+    @Transactional
+    @DeleteMapping("/delete/Proprietario/{id}")
+    public String deleteproprietario(@PathVariable(value = "id") int id)
+    {
+        proprietarioRepository.deleteById(id);;
+        return "Eliminato proprietario con codice " + id;
+    }
+
+
 }

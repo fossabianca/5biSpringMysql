@@ -2,9 +2,8 @@ package com.gestione.gestione.model;
 
 import javax.persistence.*;
 
-import lombok.Getter;
 import lombok.NonNull;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "auto")

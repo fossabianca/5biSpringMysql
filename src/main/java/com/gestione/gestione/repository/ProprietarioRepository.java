@@ -18,6 +18,7 @@ public interface ProprietarioRepository extends JpaRepository<proprietario, Long
     public proprietario findByNome(String nome);
 
     public proprietario findByCognome(String cognome);
+
     @Query(value = "select * from proprietario p where p.cognome = :cognome", nativeQuery = true)
     public List<proprietario> getProprietariByCognome(@Param("cognome")String cognome);
 }

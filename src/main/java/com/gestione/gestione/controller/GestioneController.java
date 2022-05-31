@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 @RestController
 @RequestMapping("/api")
 public class GestioneController {
@@ -59,4 +61,17 @@ public class GestioneController {
     return proprietarioRepository.findByNome(nome);
     }
     
+    @Transactional
+    @PostMapping("/add/Proprietario/")
+    public proprietario addProprietario(@RequestBody proprietario proprietario)
+    {
+        return proprietarioRepository.save(proprietario);
+    }
+
+    @Transactional
+    @PostMapping("/add/Proprietari/")
+    public List<proprietario> addProprietario(@RequestBody List<proprietario> proprietari)
+    {
+        return proprietarioRepository.saveAll(proprietari);
+    }
 }

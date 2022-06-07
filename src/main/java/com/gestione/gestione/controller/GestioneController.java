@@ -25,7 +25,7 @@ public class GestioneController {
     return autoRepository.findAll();
     }
 
-    @GetMapping("/Proprietario")
+    @GetMapping("/Proprietari")
     public List<proprietario> getAllProprietari() 
     {
     return proprietarioRepository.findAll();

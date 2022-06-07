@@ -80,9 +80,15 @@ public class GestioneController {
     public proprietario updateproprietario(@RequestBody proprietario proprietario)
     {
         proprietario proprietarioMemorizzato = proprietarioRepository.findById(proprietario.getId()).orElse(proprietario);
+        if(proprietario.getCognome() != null && proprietario.getCognome() != proprietarioMemorizzato.getCognome()){
         proprietarioMemorizzato.setCognome(proprietario.getCognome());
+        }
+        if(proprietario.getNome() != null && proprietario.getNome() != proprietarioMemorizzato.getNome()){
         proprietarioMemorizzato.setNome(proprietario.getNome());
+        }
+        if(proprietario.getTelefono() != null && proprietario.getTelefono() != proprietarioMemorizzato.getTelefono()){
         proprietarioMemorizzato.setTelefono(proprietario.getTelefono());
+        }
         return proprietarioRepository.save(proprietarioMemorizzato);
     }
 
